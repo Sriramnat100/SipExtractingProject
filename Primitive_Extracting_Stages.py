@@ -7,7 +7,6 @@ import PyPDF2
 from PyPDF2 import PdfFileReader, PdfFileWriter
 from rake_nltk import Rake
 
-
 filename = 'lecture.pdf'
 
 #opening and reading through file
@@ -16,8 +15,6 @@ pdfReader = PyPDF2.PdfFileReader(pdfFileObj)
 
 #Determing Number of Pages for while loop
 num_pages = pdfReader.numPages                
-
-
 count = 0
 text = ""
 
@@ -34,7 +31,6 @@ while count < num_pages:
     
     if re.search(text,stop):
         break
-    
 #Below if statement exists to check if the above library returned #words. It's done because PyPDF2 cannot read scanned files.
 
 if text != "":
